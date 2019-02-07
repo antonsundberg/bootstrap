@@ -23,7 +23,7 @@
 
     <div class="bd-toc-item{{ if eq $active_group true }} active{{ end }}">
         <a class="bd-toc-link" href="/docs/{{ $.Site.Params.docs_version }}/{{ $group_slug }}/{{ if $group.pages }}{{ $link_slug }}/{{ end }}">
-          {{ $group.title }}
+          {{- $group.title -}}
         </a>
 
         {{- if and (eq $active_group true) ($group.pages) }}
@@ -32,7 +32,7 @@
             {{- $doc_slug := $doc.title | urlize }}
             <li{{ if and ($active_group) (eq $page_slug $doc_slug) }} class="active bd-sidenav-active"{{ end }}>
               <a href="/docs/{{ $.Site.Params.docs_version }}/{{ $group_slug }}/{{ $doc_slug }}/">
-                {{ $doc.title }}
+                {{- $doc.title -}}
               </a>
             </li>
           {{- end }}
